@@ -1,0 +1,34 @@
+{
+    "manifest_version": 3,
+    "name": "Screenshot Comment Generator",
+    "version": "1.0.0",
+    "description": "Select a region of the screen, capture it, and generate AI comments",
+    "permissions": [
+        "activeTab",
+        "storage",
+        "scripting"
+    ],
+    "host_permissions": [
+        "http://localhost:*/*",
+        "http://127.0.0.1:*/*"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "service_worker": "js/background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "js/content.js"
+            ],
+            "css": [
+                "styles/content.css"
+            ]
+        }
+    ]
+}

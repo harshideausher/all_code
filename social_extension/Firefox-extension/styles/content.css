@@ -1,0 +1,19 @@
+#screenshot-selection-box {
+    box-sizing: border-box;
+    pointer-events: auto;
+}
+
+#screenshot-selection-box .resize-handle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ffffff;
+    border: 1px solid #1a73e8;
+    pointer-events: auto;
+}
+
+#screenshot-selection-box .selection-buttons {
+    display: flex;
+    gap: 5px;
+    pointer-events: auto;
+}

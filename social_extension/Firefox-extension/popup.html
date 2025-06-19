@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screenshot Comment Generator</title>
+    <link rel="stylesheet" href="styles/popup.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Screenshot Comment Generator</h1>
+        </header>
+
+        <main>
+            <div id="capture-screen" class="screen active">
+                <button id="capture-btn" class="primary-btn">Select Region</button>
+                <p class="instructions">Click the button above to select a region of the screen to capture.</p>
+            </div>
+
+            <div id="preview-screen" class="screen">
+                <div class="screenshot-container">
+                    <img id="screenshot-preview" alt="Screenshot Preview">
+                    <span id="capture-time" class="timestamp"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="caption-input">Add a caption (optional):</label>
+                    <textarea id="caption-input"
+                        placeholder="Describe what's in this image or provide context..."></textarea>
+                </div>
+
+                <div class="buttons-row">
+                    <button id="generate-btn" class="primary-btn">Generate Comment</button>
+                    <button id="recapture-btn" class="secondary-btn">Capture Again</button>
+                </div>
+            </div>
+
+            <div id="result-screen" class="screen">
+                <div class="result-container">
+                    <div class="screenshot-container small">
+                        <img id="result-screenshot" alt="Screenshot">
+                    </div>
+
+                    <div class="comment-container">
+                        <h2>Generated Comment</h2>
+                        <div id="comment-display" class="comment-box"></div>
+
+                        <div class="buttons-row">
+                            <button id="copy-btn" class="action-btn">
+                                <span class="icon">📋</span> Copy
+                            </button>
+                            <button id="edit-btn" class="action-btn">
+                                <span class="icon">✏️</span> Edit
+                            </button>
+                            <button id="regenerate-btn" class="action-btn">
+                                <span class="icon">🔄</span> Regenerate
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="edit-comment-container" class="edit-container hidden">
+                    <textarea id="edit-comment-input"></textarea>
+                    <div class="buttons-row">
+                        <button id="save-edit-btn" class="primary-btn">Save</button>
+                        <button id="cancel-edit-btn" class="secondary-btn">Cancel</button>
+                    </div>
+                </div>
+
+                <button id="start-over-btn" class="secondary-btn full-width">Start Over</button>
+            </div>
+
+            <!-- Loading overlay -->
+            <div id="loading-overlay" class="hidden">
+                <div class="spinner"></div>
+                <p id="loading-message">Generating comment...</p>
+            </div>
+
+            <!-- Error message -->
+            <div id="error-message" class="error-message hidden">
+                <p id="error-text"></p>
+                <button id="error-dismiss-btn" class="secondary-btn">Dismiss</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/popup.js"></script>
+</body>
+
+</html>

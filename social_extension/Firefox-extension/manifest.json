@@ -1,0 +1,44 @@
+{
+    "manifest_version": 2,
+    "name": "Screenshot Comment Generator",
+    "version": "1.0.0",
+    "description": "Select a region of the screen, capture it, and generate AI comments",
+    "permissions": [
+        "activeTab",
+        "storage",
+        "tabs",
+        "<all_urls>",
+        "http://localhost:*/*",
+        "http://127.0.0.1:*/*"
+    ],
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "48": "images/icon48.png",
+            "96": "images/icon96.png"
+        }
+    },
+    "background": {
+        "scripts": [
+            "js/background.js"
+        ]
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "js/content.js"
+            ],
+            "css": [
+                "styles/content.css"
+            ]
+        }
+    ],
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "screenshot-comment-generator@example.com"
+        }
+    }
+}
