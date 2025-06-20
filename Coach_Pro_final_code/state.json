@@ -1,0 +1,11 @@
+{
+  "assistant_id": null,
+  "thread_id": null,
+  "current_step": 0,
+  "discovery_complete": false,
+  "user_info": {},
+  "last_response": null,
+  "last_updated": null,
+  "last_query": null,
+  "last_interaction": null
+}
